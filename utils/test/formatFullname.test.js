@@ -10,4 +10,9 @@ describe('FormatFullname', () => {
         expect(formatFullname(undefined)).to.equal('Error');
         expect(formatFullname(function() {})).to.equal('Error');
     });
+
+    it('should throw Error if "fullName" does not have correct pattern', () => {
+        expect(formatFullname('JohnDoe')).to.equal('Error');
+        expect(formatFullname('John Doe Doe')).to.equal('Error');
+    });
 });

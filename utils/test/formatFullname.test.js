@@ -16,6 +16,11 @@ describe('FormatFullname', () => {
         expect(formatFullname('John Doe Doe')).to.equal('Error');
     });
 
+    it('should return "Error" when string is empty', () => {
+        expect(formatFullname('')).to.equal('Error');
+        expect(formatFullname(' ')).to.equal('Error');
+    });
+
     it('should return correct result if proper args', () => {
         expect(formatFullname('John Doe')).to.equal('John Doe');
         expect(formatFullname('JOHN DOE')).to.equal('John Doe');
